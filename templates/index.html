@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contagem de Letras</title>
+</head>
+<body>
+    <h1>Contagem de Letras</h1>
+    <form method="POST">
+        <label for="palavra_frase">Digite uma palavra ou frase:</label>
+        <input type="text" id="palavra_frase" name="palavra_frase" required>
+        <input type="submit" value="Contar">
+    </form>
+    {% if contagem_letras %}
+        <h2>Contagem de letras:</h2>
+        <ul>
+            {% for letra, contagem in contagem_letras.items() %}
+                <li>{{ letra }}: {{ contagem }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
